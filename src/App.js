@@ -1,25 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Grommet } from 'grommet';
+import AppBar from './components/AppBar';
+import Initiative from './components/Initiative';
 import './App.css';
 
-function App() {
+const theme = {
+  global: {
+    colors: {
+      brand: '#228BE6'
+    },
+    font: {
+      family: 'Roboto',
+      size: '18px',
+      height: '20px',
+    },
+  },
+};
+
+const App = () => {
+  // improving the app bar here: https://github.com/grommet/grommet-starter-new-app
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grommet theme={theme}>
+      <AppBar>Roll for Initiative!</AppBar> 
+      <Initiative />
+    </Grommet>
   );
 }
 
