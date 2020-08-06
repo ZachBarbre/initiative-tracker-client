@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Grommet } from 'grommet';
-import AppBar from './components/AppBar';
-import Initiative from './components/Initiative';
+import AppHeader from './components/AppHeader';
+import AppMain from './components/AppMain'
 import './App.css';
 
 const theme = {
@@ -18,11 +18,12 @@ const theme = {
 };
 
 const App = () => {
-  // improving the app bar here: https://github.com/grommet/grommet-starter-new-app
+  const [showSidebar, setShowSidebar] = useState(false);
+  
   return (
-    <Grommet theme={theme}>
-      <AppBar>Roll for Initiative!</AppBar> 
-      <Initiative />
+    <Grommet theme={theme} full>
+      <AppHeader showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
+      <AppMain showSidebar={showSidebar} />
     </Grommet>
   );
 }
