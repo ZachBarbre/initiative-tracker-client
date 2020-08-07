@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Grommet } from 'grommet';
+import { Box, Grommet, ResponsiveContext } from 'grommet';
 import AppHeader from './components/AppHeader';
 import AppMain from './components/AppMain'
 import './App.css';
@@ -22,8 +22,14 @@ const App = () => {
   
   return (
     <Grommet theme={theme} full>
-      <AppHeader showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
-      <AppMain showSidebar={showSidebar} />
+      <ResponsiveContext.Consumer>
+        {size => (
+          <Box fill>
+            <AppHeader showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
+            <AppMain showSidebar={showSidebar} size={size} setShowSidebar={setShowSidebar} />
+          </Box>
+        )}
+      </ResponsiveContext.Consumer>
     </Grommet>
   );
 }
