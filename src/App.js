@@ -18,18 +18,13 @@ const theme = {
 };
 
 const App = () => {
-  const [showSidebar, setShowSidebar] = useState(false);
   
   return (
     <Grommet theme={theme} full>
-      <ResponsiveContext.Consumer>
-        {size => (
-          <Box fill>
-            <AppHeader showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
-            <AppMain showSidebar={showSidebar} size={size} setShowSidebar={setShowSidebar} />
-          </Box>
-        )}
-      </ResponsiveContext.Consumer>
+      <Box fill>
+        <AppHeader />
+        <AppMain  />
+      </Box>
     </Grommet>
   );
 }
