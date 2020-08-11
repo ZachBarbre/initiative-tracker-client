@@ -15,11 +15,11 @@ const Initiative = () => {
     ]
     const [initiativeData, setInitiativeData] = useState(initInitiativeData)
 
-    const handleSetInitiative = (creatureIndex, newInitiative) => {
-        let updateInitiativeArray = [... initiativeData];
-        const newCreatureData
-        // updateInitiativeArray.splice(creatureIndex, 1, {... })
-    }
+    // const handleSetInitiative = (creatureIndex, newInitiative) => {
+    //     let updateInitiativeArray = [... initiativeData];
+    //     const newCreatureData
+    //     updateInitiativeArray.splice(creatureIndex, 1, {... })
+    // }
 
     return (
         <List margin='small' data={initiativeData}>
