@@ -5,7 +5,7 @@ import Initiative from './Initiative';
 const AppMain = () => {
   return(
     <Box direction='row' flex>
-      <Box flex align='center' justify='start'>
+      <Box flex align='center' justify='start' width='large'>
         <Initiative />
       </Box>
     </Box>
